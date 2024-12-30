@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charSet="utf-8" />
+<title>Education Counselling | About</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+.navbar {
+	background-color: #f3ebf7;
+}
+
+.navbar-nav .nav-item .nav-link.active {
+	color: #6528f7; /* White text color */
+	font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+	transform: scale(1.1);
+}
+
+.navbar-brand {
+	color: #000;
+	font-weight: bold;
+}
+
+.navbar-brand .navbar-link:hover {
+	text-decoration: underline;
+}
+
+.nav-item .nav-link {
+	color: #6528f7;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.nav-item .nav-link.active .nav-link {
+	color: #6528f7;
+	font-weight: bold;
+}
+
+p {
+	text-align: justify;
+	font-size: 17px;
+}
+
+li {
+	list-style-type: none;
+	font-size: 17px;
+}
+
+.nav-link {
+	text-decoration: none; /* Remove the default underline */
+	padding-bottom: 5px;
+	/* Adds space between the text and the underline */
+	border-bottom: 2px solid transparent; /* Set default border */
+	transition: border-color 0.3s ease;
+	/* Smooth transition for active state */
+}
+
+.nav-link.active {
+	border-bottom-color: #6528f7; /* Active state underline color */
+}
+
+section p {
+	text-align: justify;
+	margin-top: 2em;
+}
+</style>
+</head>
+<body class="min-vh-100">
+	<nav style="background-color: #F2F0ff" class="navbar navbar-expand-lg">
+		<div class="container-fluid">
+			<div>
+				<a class="navbar-brand nav-link ms-4 fs-2" th:href="@{/home}"
+					style="color: #6528f7;">Dwaraka Overseas</a>
+				<h5 class="ms-4" style="color: #6528f7;">Journey Towards A
+					Bright Future!</h5>
+			</div>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<!-- Add ms-auto class to move navbar items to the right -->
+				<ul class="navbar-nav ms-auto mb-2 ">
+					<li class="nav-item"><a class="nav-link " aria-current="page"
+						th:href="@{/home}">HOME</a></li>
+					<li class="nav-item"><a class="nav-link " th:href="@{/about}">ABOUT</a></li>
+					<li class="nav-item"><a class="nav-link "
+						th:href="@{/services}">SERVICES</a></li>
+					<li class="nav-item"><a class="nav-link active"
+						th:href="@{/faQ}">FAQ</a></li>
+					<li class="nav-item"><a class="nav-link "
+						th:href="@{/contact}">CONTACT</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/apply}">APPLY</a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/adminLogin}"><i class="bi bi-person-circle fs-5"></i>Admin
+							Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<section class="p-4 w-75 mx-auto">
+		<h1 class="text-center" style="color: #6528f7">Frequently Asked
+			Questions</h1>
+
+		<div class="pb-5 pt-5">
+			<a
+				class="btn btn-light w-100 p-3 d-flex justify-content-between align-items-center"
+				data-bs-toggle="collapse" href="#collapseExample" role="button"
+				aria-expanded="false" aria-controls="collapseExample">
+				<h5>1. Is admission to the schools applied for guaranteed?</h5>
+				<i class="bi bi-caret-down-fill ms-auto"></i>
+			</a>
+
+			<div class="collapse" id="collapseExample">
+				<div class="card card-body fs-5">While we are highly confident
+					in the quality of our services and the work we do, we cannot
+					guarantee admission to any school due to the many factors involved
+					in the application process.</div>
+			</div>
+		</div>
+
+
+		<div class="pb-5">
+			<a
+				class="btn btn-light w-100 p-3 d-flex justify-content-between align-items-center"
+				data-bs-toggle="collapse" href="#collapseExample1" role="button"
+				aria-expanded="false" aria-controls="collapseExample">
+				<h5>2. I'm unsure if my English proficiency is sufficient to
+					apply to a school in the US. Could you help me with this?</h5>
+				<i class="bi bi-caret-down-fill ms-auto"></i>
+			</a>
+
+			<div class="collapse" id="collapseExample1">
+				<div class="card card-body fs-5">Absolutely! Our team includes
+					experienced English language teachers with Master's degrees and
+					PhDs. We will assess your English proficiency together and inform
+					you if it's sufficient for your application.</div>
+			</div>
+		</div>
+
+		<div class="pb-5">
+			<a
+				class="btn btn-light w-100 p-3 d-flex justify-content-between align-items-center"
+				data-bs-toggle="collapse" href="#collapseExample2" role="button"
+				aria-expanded="false" aria-controls="collapseExample"><h5>3.
+					I’m a bit unclear about the service packages you offer. How can I
+					contact you to get more details?</h5><i
+				class="bi bi-caret-down-fill ms-auto"></i> </a>
+			<div class="collapse" id="collapseExample2">
+				<div class="card card-body fs-5">You can contact us through the
+					form on our website or by emailing us.</div>
+			</div>
+		</div>
+
+			<div class="pb-5">
+				<a
+				class="btn btn-light w-100 p-3 d-flex justify-content-between align-items-center"
+				data-bs-toggle="collapse" href="#collapseExample3" role="button"
+				aria-expanded="false" aria-controls="collapseExample"><h5>4.
+					I’ve reviewed your packages and I’m ready to get started. What’s
+					the next step?</h5><i class="bi bi-caret-down-fill ms-auto"></i> </a>
+		<div class="collapse" id="collapseExample3">
+			<div class="card card-body fs-5">Great! The next step is to complete
+				the application form on our website. We will get back to you
+				promptly and arrange an online pre-assessment session.</div>
+		</div>
+			</div>
+
+			<div class="pb-5">
+				<a
+				class="btn btn-light w-100 p-3 d-flex justify-content-between align-items-center"
+				data-bs-toggle="collapse" href="#collapseExample4" role="button"
+				aria-expanded="false" aria-controls="collapseExample"><h5>5.
+					I’ve never been abroad before and I'm unsure if I can adjust to
+					living in a foreign country. Can you assist me with that?</h5><i
+				class="bi bi-caret-down-fill ms-auto"></i> </a>
+		<div class="collapse" id="collapseExample4">
+			<div class="card card-body fs-5">Being a Professional team, we are
+				ready to answer all your questions from academic life to daily life
+				abroad.</div>
+		</div>
+			</div>
+
+			<div class="pb-5">
+				<a
+				class="btn btn-light w-100 p-3 d-flex justify-content-between align-items-center"
+				data-bs-toggle="collapse" href="#collapseExample5" role="button"
+				aria-expanded="false" aria-controls="collapseExample"><h5>6.
+					I’m not familiar with the TOEFL and/or GRE exams. Could you provide
+					me with more information about them?</h5><i
+				class="bi bi-caret-down-fill ms-auto"></i> </a>
+		<div class="collapse" id="collapseExample5">
+			<div class="card card-body fs-5">Yes, We provide all the necessary
+				information on the TOEFL/IELTS/GRE exams, we also help you with the
+				preparation process</div>
+		</div>
+			</div>
+			
+			<div class="pb-5">
+				<a
+				class="btn btn-light w-100 p-3 d-flex justify-content-between align-items-center"
+				data-bs-toggle="collapse" href="#collapseExample6" role="button"
+				aria-expanded="false" aria-controls="collapseExample"><h5>7.
+					My undergraduate degree is in a different field from the one I want
+					to pursue in graduate school. Am I still eligible to apply?</h5><i
+				class="bi bi-caret-down-fill ms-auto"></i> </a>
+		<div class="collapse" id="collapseExample6">
+			<div class="card card-body fs-5">Absolutely! In this case, you will
+				need to provide a detailed explanation of your motivation in your
+				statement of purpose and complete any required prerequisite courses.</div>
+		</div>
+			</div>
+
+			<div class="pb-5">
+				<a
+				class="btn btn-light w-100 p-3 d-flex justify-content-between align-items-center"
+				data-bs-toggle="collapse" href="#collapseExample7" role="button"
+				aria-expanded="false" aria-controls="collapseExample"><h5>8.
+					Are there any full-ride scholarships available for international
+					students?</h5><i class="bi bi-caret-down-fill ms-auto"></i> </a>
+		<div class="collapse" id="collapseExample7">
+			<div class="card card-body fs-5">Full-ride scholarships for Master's
+				programs are quite limited. However, securing a full-ride
+				scholarship for PhD programs is more common. Additionally, there are
+				external scholarship programs, like the Fulbright Scholarship, that
+				can cover all your educational expenses.</div>
+		</div>
+			</div>
+
+			<div class="pb-5">
+				<a
+				class="btn btn-light w-100 p-3 d-flex justify-content-between align-items-center"
+				data-bs-toggle="collapse" href="#collapseExample8" role="button"
+				aria-expanded="false" aria-controls="collapseExample"><h5>9.
+					Are there any age limitations for graduate programs?</h5><i
+				class="bi bi-caret-down-fill ms-auto"></i> </a>
+		<div class="collapse" id="collapseExample8">
+			<div class="card card-body fs-5">No, there are no age restrictions
+				for graduate programs. Students of all ages are encouraged to apply.</div>
+		</div>
+			</div>
+
+			<div class="pb-5">
+				<a
+				class="btn btn-light w-100 p-3 d-flex justify-content-between align-items-center"
+				data-bs-toggle="collapse" href="#collapseExample9" role="button"
+				aria-expanded="false" aria-controls="collapseExample"><h5>10.
+					Will I be allowed to work while studying in the US?</h5><i
+				class="bi bi-caret-down-fill ms-auto"></i> </a>
+		<div class="collapse" id="collapseExample9">
+			<div class="card card-body fs-5">You are allowed to work during term
+				time for a maximum of 20 hours per week. After your first year of
+				study, you may be eligible to work off-campus if you can demonstrate
+				financial need (fluctuations in USD/TRY parity are considered a
+				valid reason for requesting off-campus work authorization).
+				Additionally, you can participate in internships through Curricular
+				Practical Training (CPT) and work either full-time or part-time
+				through Optional Practical Training (OPT) during and after your
+				studies. Please contact us for more details.</div>
+		</div>
+			</div>
+
+			<div class="pb-5">
+				<a
+				class="btn btn-light w-100 p-3 d-flex justify-content-between align-items-center"
+				data-bs-toggle="collapse" href="#collapseExample10" role="button"
+				aria-expanded="false" aria-controls="collapseExample"><h5>11.
+					Do you offer visa consulting services for students?</h5><i
+				class="bi bi-caret-down-fill ms-auto"></i> </a>
+		<div class="collapse" id="collapseExample10">
+			<div class="card card-body fs-5">Yes, we offer visa consulting
+				services for students. Our services include assisting with document
+				preparation, filling out the DS-160 form, creating the SEVIS record,
+				scheduling the visa interview, and providing interview practice.</div>
+		</div>
+			</div>
+	</section>
+	<footer style="background-color: #F2F0ff;" class="p-3">
+		<p class="text-center" style="color: #6528f7">Copyright © 2024 |
+			All Rights Reserved |Dwaraka Overseas</p>
+		<p class="text-center fw-bold">Powered by Dwaraka Overseas</p>
+	</footer>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Education Counselling Application</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+		<style>
+.navbar {
+	background-color: #f3ebf7;
+}
+
+.navbar-nav .nav-item .nav-link.active {
+	color: #6528f7; /* White text color */
+	font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+	transform: scale(1.1);
+}
+
+.navbar-brand {
+	color: #000;
+	font-weight: bold;
+}
+
+.navbar-brand .navbar-link:hover {
+	text-decoration: underline;
+}
+
+.nav-item .nav-link {
+	color: #6528f7;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.nav-item .nav-link.active .nav-link {
+	color: #6528f7;
+	font-weight: bold;
+}
+  
+p {
+	text-align: justify;
+	font-size:17px;
+}
+li{
+	list-style-type:none;
+	font-size:17px;
+}
+
+.nav-link {
+      text-decoration: none; /* Remove the default underline */
+      padding-bottom: 5px; /* Adds space between the text and the underline */
+      border-bottom: 2px solid transparent; /* Set default border */
+      transition: border-color 0.3s ease; /* Smooth transition for active state */
+    }
+
+ .nav-link.active {
+  border-bottom-color: #6528f7; /* Active state underline color */
+}
+
+</style>
+</head>
+<body class="min-vh-100">
+	<nav style="background-color: #F2F0ff"  class="navbar navbar-expand-lg">
+		<div class="container-fluid">
+			<div>
+				<a class="navbar-brand nav-link ms-4 fs-2" th:href="@{/home}"
+					style="color: #6528f7;">Dwaraka Overseas</a>
+				<h5 class="ms-4" style="color: #6528f7;">Journey Towards A Bright Future!</h5>
+			</div>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<!-- Add ms-auto class to move navbar items to the right -->
+				<ul class="navbar-nav ms-auto mb-2 ">
+					<li class="nav-item"><a class="nav-link" aria-current="page"
+						th:href="@{/home}">HOME</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/about}">ABOUT</a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/services}">SERVICES</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/faQ}">FAQ</a></li>
+					<li class="nav-item"><a class="nav-link "
+						th:href="@{/contact}">CONTACT</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/register}">APPLY</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/adminLogin}"><i class="bi bi-person-circle fs-5"></i>Admin Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<section  style="color:white;background-image: linear-gradient(to right, #6122f5, #7d60c4);">
+		<div class="container h-100 p-5">
+			<div class="d-flex justify-content-center align-items-center h-100">
+					<div class="card text-black" style="background-color:#fff; border-radius: 25px;">
+						<div class="card-body p-md-5">
+							<div class="row justify-content-center">
+									<p style="color:#6528f7;" class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Admin Login</p>
+									<form class="mx-1 mx-md-4" method="POST" th:action="@{/adminLogin}" th:object="${adminEntity}">
+										<div th:if="${error}">
+											<p th:text="${error}" class="text-danger"></p>
+										</div>
+
+										<div class="d-flex flex-row align-items-center mb-4">
+											<i class="bi bi-envelope-fill me-3 fs-2"></i>
+											<div data-mdb-input-init class="form-outline flex-fill mb-0">
+												<input type="email" th:field="*{emailId}"
+													id="form3Example3c" class="form-control" /> <label
+													class="form-label" for="form3Example3c"> Email</label>
+											</div>
+										</div>
+
+										<div class="d-flex flex-row align-items-center mb-4">
+											<i class="bi bi-key-fill me-3 fs-2"></i>
+											<div data-mdb-input-init class="form-outline flex-fill mb-0">
+												<input type="password" th:field=*{password}
+													id="form3Example4cd" class="form-control" /> <label
+													class="form-label" for="form3Example4cd"> password</label>
+											</div>
+										</div>
+
+										<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+											<button type="submit" data-mdb-button-init
+												data-mdb-ripple-init class="btn btn-lg text-light" style="background-color: #6528f7">Login</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	</section>
+	<footer style="background-color: #F2F0ff;" class="p-3">
+		<p class="text-center" style="color: #6528f7">Copyright © 2024 | All Rights Reserved |Dwaraka Overseas</p>
+		<p class="text-center fw-bold" >Powered by Dwaraka Overseas</p>
+	</footer>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

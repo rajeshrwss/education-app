@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charSet="utf-8" />
+<title>Education Counselling | Home</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+/* Highlight the active link with a different color and background */
+.navbar {
+	background-color: #f3ebf7;
+}
+
+.navbar-nav .nav-item .nav-link.active {
+	color: #6528f7; /* White text color */
+	font-weight: bold;
+}
+
+/* Optionally, you can add a hover effect on active link */
+.navbar-nav .nav-item .nav-link:hover {
+	transform: scale(1.1);
+}
+
+.navbar-brand {
+	color: #000;
+	font-weight: bold;
+}
+
+.navbar-brand .navbar-link:hover {
+	text-decoration: underline;
+}
+
+.nav-item .nav-link {
+	color: #6528f7;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.nav-item .nav-link.active .nav-link {
+	color: #6528f7;
+	font-weight: bold;
+}
+
+p {
+	text-align: justify;
+	font-size:18px;
+}
+
+.nav-link {
+      text-decoration: none; /* Remove the default underline */
+      padding-bottom: 5px; /* Adds space between the text and the underline */
+      border-bottom: 2px solid transparent; /* Set default border */
+      transition: border-color 0.3s ease; /* Smooth transition for active state */
+}
+
+ .nav-link.active {
+  border-bottom-color: #6528f7; /* Active state underline color */
+}
+
+</style>
+</head>
+<body class="min-vh-100">
+	<nav style="background-color: #F2F0ff" class="navbar navbar-expand-lg ">
+		<div class="container-fluid">
+			<div>
+				<a class="navbar-brand nav-link ms-4 fs-2" th:href="@{/home}"
+					style="color: #6528f7;">Dwaraka Overseas</a>
+				<h5 class="ms-4" style="color: #6528f7;">Journey Towards A Bright Future!</h5>
+			</div>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<!-- Add ms-auto class to move navbar items to the right -->
+				<ul class="navbar-nav ms-auto mb-2 ">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" th:href="@{/home}">HOME</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/about}">ABOUT</a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/services}">SERVICES</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/faQ}">FAQ</a></li>
+					<li class="nav-item"><a class="nav-link " th:href="@{/contact}">CONTACT</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/register}">APPLY</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/adminLogin}"><i class="bi bi-person-circle fs-5"></i>Admin Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<section>
+	 <!-- style="color:white;background-image: linear-gradient(to right, #6122f5, #7d60c4); height: 450px;" -->
+				<img src="/images/home.png" alt="Description of image" class="w-100">
+	</section>
+
+	<section style="background-color: #fff;">
+		<h1 class="text-center p-3" style="font-size: 3em; color: #6528f7;letter-spacing: 2px;">What Do We Offer?</h1>
+		<div class="row">
+			<div class="col m-4 d-flex">
+				<i class="bi bi-check2-circle fs-1"></i>
+				<div class="ms-4">
+					<h3>Free Counselling</h3>
+					<p>Reach out to us today for a free consultation! We'll help
+						you explore your goals and address any questions you have about
+						studying abroad. Let DWARAKA OVERSEAS be your trusted guide in the
+						thrilling journey of international education. While many students
+						aspire to study abroad, they often hold back due to myths and
+						misconceptions. At DWARAKA OVERSEAS, we're committed to providing
+						you with accurate information to make confident and informed
+						decisions about your future.</p>
+				</div>
+			</div>
+			<div class="col m-4 d-flex">
+				<i class="bi bi-check2-circle fs-1"></i>
+				<div class="ms-4">
+					<h3>Test Preparation</h3>
+					<p>The idea of studying abroad is thrilling, but the
+						requirement for English language tests can seem daunting. At
+						DWARAKA OVERSEAS, we recognize the challenges these tests can
+						bring. Our goal is to guide you through the process, help you
+						select the most suitable test, and craft a strategy to confidently
+						demonstrate your English proficiency. Some of the most widely
+						recognized English language tests for international students
+						include GRE, TOEFL, IELTS, PTE, GMAT, and more.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col m-4 d-flex">
+				<i class="bi bi-check2-circle fs-1"></i>
+				<div class="ms-4">
+					<h3>SOP</h3>
+					<p>Our team is here to help you craft a powerful statement of
+						purpose that highlights your unique strengths and experiences. We
+						understand the critical role a well-written and impactful SOP
+						plays in the admissions process. With our guidance, you’ll create
+						a personalized and compelling document that distinguishes you from
+						other applicants and leaves a lasting impression.</p>
+				</div>
+			</div>
+			<div class="col m-4 d-flex">
+				<i class="bi bi-check2-circle fs-1"></i>
+				<div class="ms-4">
+					<h3>Application Process</h3>
+					<p>Embarking on the journey to study abroad is an exhilarating
+						decision, but the application process might initially feel
+						overwhelming. Don’t worry! we’re committed to supporting you every
+						step of the way. From start to finish, we’ll help you craft an
+						outstanding application that boosts your chances of gaining
+						admission to your dream program.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col m-4 d-flex">
+				<i class="bi bi-check2-circle fs-1"></i>
+				<div class="ms-4">
+					<h3>Financial Aid</h3>
+					<p>We’re here to help you navigate the complexities of
+						financial aid and explore various opportunities to fund your
+						education. Whether it’s scholarships, grants, or loans, we’ll work
+						with you to maximize your chances of securing the financial
+						support you need.</p>
+				</div>
+			</div>
+			<div class="col m-4 d-flex">
+				<i class="bi bi-check2-circle fs-1"></i>
+				<div class="ms-4">
+					<h3>Visa Processing</h3>
+					<p>We understand that studying abroad is an exciting yet
+						intricate journey, and obtaining the right visa is a vital step in
+						the process. Contact us today for a free consultation, and let our
+						visa processing experts guide you through this essential stage of
+						achieving your overseas education dream. We’re dedicated to
+						helping you secure the visa you need to begin your transformative
+						academic adventure!</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row m-4" >
+			<h1 class="text-center p-4" style="font-size: 3em; color:#6528f7;letter-spacing: 2px;">Why Dwaraka Overseas?</h1>
+<p><i class="bi bi-check2-circle me-2"></i>Dwaraka Overseas specializes in providing professional consultancy services for candidates aspiring to study in abroad. Since its inception, the company has earned recognition for its high-quality services and commitment to customer satisfaction through comprehensive academic consultancy across various fields.</p>
+<p><i class="bi bi-check2-circle me-2"></i>Founded by a young entrepreneur, Dwaraka Overseas has crafted international education solutions tailored to the unique needs and potentials of students, aligning with the realities of a globalized world. By facilitating education, career, and cultural exchange programs, the company has successfully guided numerous students in making informed decisions and effectively managing their application processes for programs abroad.</p>
+<p><i class="bi bi-check2-circle me-2"></i>With strong and diverse connections across the globe, our team is well-equipped to deliver personalized support both internationally and domestically, operating in various states. Its dedicated academic team, composed of individuals who have personally navigated the abroad university admissions process, sets our Admissions apart from others in the field and ensures an exceptional standard of service.</p>		
+		</div>
+	
+	<footer style="background-color: #F2F0FE;" class="p-3">
+		<p class="text-center" style="color: #6528f7">Copyright © 2024 | All Rights Reserved |Dwaraka Overseas</p>
+		<p class="text-center fw-bold">Powered by Dwaraka Overseas</p>
+	</footer>
+	</section>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+</body>
+</html>

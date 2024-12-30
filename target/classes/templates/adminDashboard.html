@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Dashboard</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add full jQuery (not slim) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+/* Container for all fields */
+p {
+  display: flex;   
+  align-items: left;
+  margin-bottom: 10px; /* Space between each field */
+}
+span{
+	margin-left: 20px;
+}
+</style>
+<body>
+<header class="d-flex justify-content-end container-fluid"
+    style="background-color: #f3ebf7;">
+    <div class="ms-auto text-center p-3">
+        <h4 style="color: #8806cf;">
+            User: <span th:text="${adminUser}"></span>
+        </h4>
+        
+        <a href="/logout" style="background-color: #8806cf; color: white;"
+            class="btn btn-light">Logout</a>
+    </div>
+</header>
+
+<section>
+    <h2 class="text-center" style="color: #8806cf;">Student Application Data</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Student Email</th>
+                <th>Other Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through the list of students -->
+            <tr th:each="student : ${studentDataList}">
+                <td th:text="${student.studentName}"></td>
+                <td th:text="${student.email}"></td>
+                <td th:text="${student.phoneNumber}"></td>
+                <td>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#studentModal"
+                    th:data-name="${student.studentName}"
+                    th:data-email="${student.email}"
+                    th:data-phno="${student.phoneNumber}"
+                    th:data-packageinfo="${student.packageInfo}"
+                    th:data-interest="${student.interest}"
+                    th:data-country="${student.country}"
+                    th:data-purpose="${student.purpose}"
+                    th:data-careergoal="${student.careerGoal}"
+                    th:data-citizenship="${student.citizenShip}"
+                    th:data-college="${student.college}"
+                    th:data-gradcourse="${student.gradCourse}"
+                    th:data-acadamicpercentage="${student.acadamicPercentage}"
+                    th:data-activity="${student.activity}"
+                    th:data-summary="${student.summary}"
+                    th:data-engproficiency="${student.engProficiency}"
+                    th:data-testresult="${student.testResult}"
+                    th:data-documents="${student.documents}"
+                    th:data-sop="${student.sop}">
+                        View Details
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal structure -->
+    <div class="modal fade" id="studentModal" tabindex="-1" role="dialog" aria-labelledby="studentModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="studentModalLabel">Student Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <p><strong>Name :</strong> <span id="modalName"></span></p>
+                    <p><strong>Email ID :</strong> <span id="modalemail"></span></p>
+                    <p><strong>Mobile Number :</strong> <span id="modalMobileNumber"></span></p>
+                    <p><strong>Citizen Ship :</strong> <span id="modalcitizenShip"></span></p>
+                    <p><strong>Graduated From :</strong> <span id="modalgradCollege"></span></p>
+                    <p><strong>Graduation Course :</strong> <span id="modalgradCourse"></span></p>
+                    <p><strong>Academic Percentage :</strong> <span id="modalacadamicPercentage"></span></p>
+                    <p><strong>Activities in College :</strong> <span id="modalactivity"></span></p>
+                    <p><strong>Work Experience Summary :</strong> <span id="modalsummary"></span></p>
+                    <p><strong>Package Info :</strong> <span id="modalpackageInfo"></span></p>
+                    <p><strong>Education Level :</strong> <span id="modalInterest"></span></p>
+                    <p><strong>Interested Country :</strong> <span id="modalCountry"></span></p>
+                    <p><strong>Reason for this Country :</strong> <span id="modalpurpose"></span></p>
+                    <p><strong>Career Goal :</strong> <span id="modalcareerGoal"></span></p>
+                    <p><strong>English Proficiency :</strong> <span id="modalengProficiency"></span></p>
+                    <p><strong>IELTS/TOEFL Test Result :</strong> <span id="modaltestResult"></span></p>
+                    <p><strong>Documents Available :</strong> <span id="modaldocuments"></span></p>
+                    <p><strong>SOP Available :</strong> <span id="modalsop"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Use jQuery to populate the modal dynamically when a "View Details" button is clicked
+    $('#studentModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);  // Button that triggered the modal
+        var name = button.data('name');
+        var email = button.data('email');
+        var MobileNumber = button.data('phno');
+        var packageInfo = button.data('packageinfo');
+        var interest = button.data('interest');
+        var country = button.data('country');
+        var purpose = button.data('purpose');
+        var careerGoal = button.data('careergoal');
+        var citizenShip = button.data('citizenship');
+        var gradCollege = button.data('college');
+        var gradCourse = button.data('gradcourse');
+        var acadamicPercentage = button.data('acadamicpercentage');
+        var activity = button.data('activity');
+        var summary = button.data('summary');
+        var engProficiency = button.data('engproficiency');
+        var testResult = button.data('testresult');
+        var documents = button.data('documents');
+        var sop = button.data('sop');
+
+        // Update the modal's content
+        var modal = $(this);
+        modal.find('#modalName').text(name);
+        modal.find('#modalemail').text(email);
+        modal.find('#modalMobileNumber').text(MobileNumber);
+        modal.find('#modalpackageInfo').text(packageInfo);
+        modal.find('#modalInterest').text(interest);
+        modal.find('#modalCountry').text(country);
+        modal.find('#modalpurpose').text(purpose);
+        modal.find('#modalcareerGoal').text(careerGoal);
+        modal.find('#modalcitizenShip').text(citizenShip);
+        modal.find('#modalgradCollege').text(gradCollege);
+        modal.find('#modalgradCourse').text(gradCourse);
+        modal.find('#modalacadamicPercentage').text(acadamicPercentage);
+        modal.find('#modalactivity').text(activity);
+        modal.find('#modalsummary').text(summary);
+        modal.find('#modalengProficiency').text(engProficiency);
+        modal.find('#modaltestResult').text(testResult);
+        modal.find('#modaldocuments').text(documents);
+        modal.find('#modalsop').text(sop);
+    });
+</script>
+</body>
+</html>
